@@ -236,17 +236,18 @@ The default behavior of using `fetch` is to make a `GET` request, but we can als
 Suppose I wanted to send a `POST` request to a server to create a new user:
 
 ```js
+const newUser = { name: "morpheus", job: "leader" }
 const options = {
   method: "POST",
-  body: JSON.stringify({ name: "morpheus", job: "leader" }),
   headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(newUser),
 }
 ```
 
 Most of the `options` object is boilerplate (its mostly the same each time): 
 * The `method` determines the kind of request (POST, PATCH, DELETE). GET is the default.
 * The `headers` declares that we are sending JSON data. Most APIs require you send JSON data.
-* The `body` determines **what** we send to the server. Note that it must be `JSON.stringify()`-ed first.
+* The `body` is what we send to the server. Note that it must be `JSON.stringify()`-ed first.
 
 Here is a function that takes in a `newUser` object and posts it to the https://reqres.in/api/users API endpoint:
 
