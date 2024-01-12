@@ -1,5 +1,17 @@
 # Unit 3 - Async Code
 
+**Table of Contents:**
+- [Promise Overview](#promise-overview)
+  - [Promise Syntax: Making a Promise](#promise-syntax-making-a-promise)
+  - [Promise Syntax: Using a Promise](#promise-syntax-using-a-promise)
+  - [Chaining Promises](#chaining-promises)
+- [Fetch](#fetch)
+  - [Fetch with `.then()` and `.catch()`](#fetch-with-then-and-catch)
+  - [Fetch with `async`/`await` and `try`/`catch`](#fetch-with-asyncawait-and-trycatch)
+  - [Benefits of `async` and `await`](#benefits-of-async-and-await)
+  - [POST Requests](#post-requests)
+
+
 ## Promise Overview
 
 **Definition:** a promise is an object that represents the eventual completion of an asynchronous operation and the resulting value.
