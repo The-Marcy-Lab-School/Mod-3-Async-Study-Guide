@@ -187,6 +187,26 @@ fetchPromise
 
 An alternate syntax was created to write asynchronous code in a "synchronous-like" manner. This approach utilizes the `async` and `await` keywords.
 
+Think of this as the pattern: 
+
+```js
+// Basics 
+thePromise.then((myVal) => {})
+/* ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ */
+const myVal = await thePromise
+
+// Full Error Handling
+thePromise.then((myVal) => { }).catch((err) => { })
+/* ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ */
+try {
+  const myVal = await thePromise
+} catch (err) { 
+
+}
+```
+
+And here's some real code! 
+
 ```js
 const getPikachuData = async () => { 
   try {
@@ -204,11 +224,11 @@ const getPikachuData = async () => {
 getPikachuData();
 ```
 
-- The `await` keyword causes our code to pause and wait for the Promise to resolve. It then unpacks the Promise and returns the resolved value.
 - The `async` keyword does two things:
-    - First, it labels a function as asynchronous. This is required for any function that makes use of the `await` keyword
+    - First, it labels a function as asynchronous. **This is required for any function that makes use of the `await` keyword**
     - Second, it wraps the function’s returned value in a Promise. If we were to store the returned value of `getPikachuData()`, it would be a Promise.
 - To handle errors, we wrap the error-prone code in a `try {}` block and follow it with a `catch (error) {}` block. If an error occurs, the `catch` block will handle it and our program will not crash.
+- The `await` keyword causes our code to pause and wait for the Promise to resolve. It then unpacks the Promise and returns the resolved value.
 
 ### Benefits of `async` and `await`
     
