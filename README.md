@@ -313,3 +313,14 @@ postUser({ name: "morpheus", job: "leader" });
 
 </details><br>
 
+## Sunrise Sunset Challenge
+
+Use the https://sunrisesunset.io/api/ API to build a sunrise/sunset application like the one shown below. It should:
+- Have a form that lets the user input two numbers: a latitude and longitude
+- Upon submission it should:
+  - Send a `fetch()` request to the API above using the URL `https://api.sunrisesunset.io/json?lat=30&lng=90` (replacing `30` and `90` with the latitude and longitude from the form)
+  - When the fetch resolves, it should display the sunrise time, the sunset time, and the entire raw JSON API response.
+  - If the fetch rejects, catch the error and log it.
+- As a challenge, have the application fetch the sunrise/sunset for NYC upon first page load.
+
+![An application that lets the user search for a latitude and longitude and shows them the sunrise and sunset at that latitude and longitude.](./images/sunrise-sunset-app.png)
