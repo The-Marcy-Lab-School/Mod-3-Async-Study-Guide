@@ -1,4 +1,4 @@
-# Unit 3 - Async Code
+# Mod 3 - Async Code
 
 **Table of Contents:**
 - [Promise Overview](#promise-overview)
